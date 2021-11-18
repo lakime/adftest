@@ -181,6 +181,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
+						"fileName": "@filename",
 						"container": "uploadjson"
 					},
 					"columnDelimiter": ",",
