@@ -99,6 +99,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"ODATA_host": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2021-11-18T08:51:28Z"
 	},
