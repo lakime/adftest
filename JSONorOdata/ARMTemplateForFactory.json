@@ -70,7 +70,7 @@
 						"typeProperties": {
 							"source": {
 								"type": "ODataSource",
-								"query": "Airports('KSFO')/Name ",
+								"query": "$select=Name",
 								"httpRequestTimeout": "00:05:00"
 							},
 							"sink": {
@@ -233,7 +233,7 @@
 				"type": "ODataResource",
 				"schema": [],
 				"typeProperties": {
-					"path": "Airports('KSFO')"
+					"path": "Airports"
 				}
 			},
 			"dependsOn": [
