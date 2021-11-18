@@ -1,0 +1,9 @@
+{
+	"name": "JSONorOdata",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "217fe741-7c09-471e-b1ba-db43ccd009f7",
+		"tenantId": "3a6a50fc-3664-4d22-b89b-694891313170"
+	}
+}
