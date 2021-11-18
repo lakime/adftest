@@ -1,8 +1,12 @@
 {
 	"name": "OData1",
 	"properties": {
+		"annotations": [],
 		"type": "OData",
-		"annotations": []
+		"typeProperties": {
+			"url": "https://services.odata.org/TripPinRESTierService/",
+			"authenticationType": "Anonymous"
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
