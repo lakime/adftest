@@ -198,13 +198,8 @@
 									"userProperties": [],
 									"typeProperties": {
 										"source": {
-											"type": "RestSource",
-											"httpRequestTimeout": "00:01:40",
-											"requestInterval": "00.00:00:00.010",
-											"requestMethod": "GET",
-											"paginationRules": {
-												"supportRFC5988": "true"
-											}
+											"type": "ODataSource",
+											"httpRequestTimeout": "00:05:00"
 										},
 										"sink": {
 											"type": "DelimitedTextSink",
@@ -221,9 +216,14 @@
 									},
 									"inputs": [
 										{
-											"referenceName": "SourceDataset_wyu",
+											"referenceName": "ODataResource1",
 											"type": "DatasetReference",
-											"parameters": {}
+											"parameters": {
+												"tablename": {
+													"value": "@variables('truedata')",
+													"type": "Expression"
+												}
+											}
 										}
 									],
 									"outputs": [
@@ -332,7 +332,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ODataResource1')]",
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_wyu')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationDataset_wyu')]"
 			]
 		}
