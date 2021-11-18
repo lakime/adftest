@@ -150,14 +150,12 @@
 		],
 		"parameters": {
 			"One": {
-				"type": "string",
-				"defaultValue": "1"
+				"type": "string"
 			}
 		},
 		"variables": {
 			"truedata": {
-				"type": "String",
-				"defaultValue": "0"
+				"type": "String"
 			}
 		},
 		"annotations": [],
