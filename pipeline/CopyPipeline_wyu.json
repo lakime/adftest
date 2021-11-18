@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Lookup1').output",
+						"value": "@activity('Lookup1').output.value",
 						"type": "Expression"
 					},
 					"activities": [
@@ -64,7 +64,10 @@
 							"outputs": [
 								{
 									"referenceName": "DestinationDataset_wyu",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"filename": "@item().Name"
+									}
 								}
 							]
 						}
