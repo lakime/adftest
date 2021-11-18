@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "OData",
 		"typeProperties": {
-			"url": "https://services.odata.org/TripPinRESTierService/",
+			"url": "@{linkedService().DBName}",
 			"authenticationType": "Anonymous"
 		}
 	}
