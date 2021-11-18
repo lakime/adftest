@@ -88,7 +88,7 @@
 						"referenceName": "ODataResource1",
 						"type": "DatasetReference"
 					},
-					"firstRowOnly": true
+					"firstRowOnly": false
 				}
 			}
 		],
