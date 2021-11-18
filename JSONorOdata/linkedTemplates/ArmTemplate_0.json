@@ -144,7 +144,7 @@
 				"type": "ODataResource",
 				"schema": [],
 				"typeProperties": {
-					"path": "Airports"
+					"path": "Airports('KSFO')"
 				}
 			},
 			"dependsOn": [
