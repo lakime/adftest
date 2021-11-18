@@ -77,7 +77,14 @@
 			{
 				"name": "Lookup1",
 				"type": "Lookup",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "If Condition1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -93,15 +100,64 @@
 					},
 					"dataset": {
 						"referenceName": "ODataResource1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"tablename": {
+								"value": "@variables('truedata')",
+								"type": "Expression"
+							}
+						}
 					},
 					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@equals(pipeline().parameters.One, '1')",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "Set variable2",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "truedata",
+								"value": "Airport"
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "truedata",
+								"value": "Airlines"
+							}
+						}
+					]
 				}
 			}
 		],
 		"parameters": {
-			"ODATA_host": {
-				"type": "string"
+			"One": {
+				"type": "string",
+				"defaultValue": "1"
+			}
+		},
+		"variables": {
+			"truedata": {
+				"type": "String",
+				"defaultValue": "0"
 			}
 		},
 		"annotations": [],
