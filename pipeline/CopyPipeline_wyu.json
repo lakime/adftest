@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Lookup1').output.value",
+						"value": "@activity('Lookup1').output.value.Name",
 						"type": "Expression"
 					},
 					"activities": [
@@ -34,8 +34,13 @@
 							"userProperties": [],
 							"typeProperties": {
 								"source": {
-									"type": "ODataSource",
-									"httpRequestTimeout": "00:05:00"
+									"type": "RestSource",
+									"httpRequestTimeout": "00:01:40",
+									"requestInterval": "00.00:00:00.010",
+									"requestMethod": "GET",
+									"paginationRules": {
+										"supportRFC5988": "true"
+									}
 								},
 								"sink": {
 									"type": "DelimitedTextSink",
@@ -52,7 +57,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "ODataResource1",
+									"referenceName": "SourceDataset_wyu",
 									"type": "DatasetReference"
 								}
 							],
