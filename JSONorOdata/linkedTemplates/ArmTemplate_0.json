@@ -113,15 +113,16 @@
 					"referenceName": "AzureBlobStorage1",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"filename": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": {
-							"value": "fadkfajdf",
-							"type": "Expression"
-						},
 						"container": "uploadjson"
 					},
 					"columnDelimiter": ",",
@@ -215,7 +216,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
-								"value": "@activity('Lookup1').output",
+								"value": "@activity('Lookup1').output.value",
 								"type": "Expression"
 							},
 							"activities": [
@@ -265,7 +266,9 @@
 										{
 											"referenceName": "DestinationDataset_wyu",
 											"type": "DatasetReference",
-											"parameters": {}
+											"parameters": {
+												"filename": "@item().Name"
+											}
 										}
 									]
 								}
