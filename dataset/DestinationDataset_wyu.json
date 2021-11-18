@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@item.Name",
+					"value": "@Destination",
 					"type": "Expression"
 				},
 				"container": "uploadjson"
