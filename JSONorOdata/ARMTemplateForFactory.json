@@ -93,16 +93,7 @@
 										"sink": {
 											"type": "DelimitedTextSink",
 											"storeSettings": {
-												"type": "AzureBlobStorageWriteSettings",
-												"metadata": [
-													{
-														"name": "Nejm",
-														"value": {
-															"value": "@item().Name",
-															"type": "Expression"
-														}
-													}
-												]
+												"type": "AzureBlobStorageWriteSettings"
 											},
 											"formatSettings": {
 												"type": "DelimitedTextWriteSettings",
@@ -185,7 +176,7 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": {
-							"value": "Sroda",
+							"value": "@item.name()",
 							"type": "Expression"
 						},
 						"container": "uploadjson"
