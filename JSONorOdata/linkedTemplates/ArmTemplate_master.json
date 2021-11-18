@@ -15,18 +15,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'RestService1'"
 		},
-		"AzureKeyVault1_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://piotruwspc0646364860.vault.azure.net/"
-		},
-		"MongoDb1_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "MongoDB"
-		},
-		"MongoDb1_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "platnosc"
-		},
 		"OData1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://services.odata.org/TripPinRESTierService/"
@@ -72,9 +60,6 @@
 					"RestService1_password": {
 						"value": "[parameters('RestService1_password')]"
 					},
-					"AzureKeyVault1_properties_typeProperties_baseUrl": {
-						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
-					},
 					"OData1_properties_typeProperties_url": {
 						"value": "[parameters('OData1_properties_typeProperties_url')]"
 					},
@@ -83,12 +68,6 @@
 					},
 					"RestService1_properties_typeProperties_userName": {
 						"value": "[parameters('RestService1_properties_typeProperties_userName')]"
-					},
-					"MongoDb1_properties_typeProperties_connectionString_secretName": {
-						"value": "[parameters('MongoDb1_properties_typeProperties_connectionString_secretName')]"
-					},
-					"MongoDb1_properties_typeProperties_database": {
-						"value": "[parameters('MongoDb1_properties_typeProperties_database')]"
 					}
 				}
 			},

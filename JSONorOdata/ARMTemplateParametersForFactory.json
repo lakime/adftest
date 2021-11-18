@@ -11,15 +11,6 @@
 		"RestService1_password": {
 			"value": ""
 		},
-		"AzureKeyVault1_properties_typeProperties_baseUrl": {
-			"value": "https://piotruwspc0646364860.vault.azure.net/"
-		},
-		"MongoDb1_properties_typeProperties_connectionString_secretName": {
-			"value": "MongoDB"
-		},
-		"MongoDb1_properties_typeProperties_database": {
-			"value": "platnosc"
-		},
 		"OData1_properties_typeProperties_url": {
 			"value": "https://services.odata.org/TripPinRESTierService/"
 		},

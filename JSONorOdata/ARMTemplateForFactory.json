@@ -15,18 +15,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'RestService1'"
 		},
-		"AzureKeyVault1_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://piotruwspc0646364860.vault.azure.net/"
-		},
-		"MongoDb1_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "MongoDB"
-		},
-		"MongoDb1_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "platnosc"
-		},
 		"OData1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://services.odata.org/TripPinRESTierService/"
@@ -126,7 +114,14 @@
 					{
 						"name": "Lookup1",
 						"type": "Lookup",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "If Condition1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
@@ -143,15 +138,66 @@
 							"dataset": {
 								"referenceName": "ODataResource1",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"tablename": {
+										"value": "@variables('truedata')",
+										"type": "Expression"
+									}
+								}
 							},
 							"firstRowOnly": false
+						}
+					},
+					{
+						"name": "If Condition1",
+						"type": "IfCondition",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"expression": {
+								"value": "@equals(pipeline().parameters.One, '1')",
+								"type": "Expression"
+							},
+							"ifFalseActivities": [
+								{
+									"name": "Set variable2",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "truedata",
+										"value": "Airport"
+									}
+								}
+							],
+							"ifTrueActivities": [
+								{
+									"name": "Set variable1",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "truedata",
+										"value": "Airlines"
+									}
+								}
+							]
 						}
 					}
 				],
 				"policy": {
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
+				},
+				"parameters": {
+					"One": {
+						"type": "string"
+					}
+				},
+				"variables": {
+					"truedata": {
+						"type": "String"
+					}
 				},
 				"annotations": [],
 				"lastPublishTime": "2021-11-18T08:51:28Z"
@@ -198,29 +244,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/MongoDbV2Collection1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "MongoDb1",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Loc"
-				},
-				"annotations": [],
-				"type": "MongoDbV2Collection",
-				"schema": [],
-				"typeProperties": {
-					"collection": "dozaplaty"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/MongoDb1')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/ODataResource1')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -229,11 +252,19 @@
 					"referenceName": "OData1",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"tablename": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "ODataResource",
 				"schema": [],
 				"typeProperties": {
-					"path": "Airports"
+					"path": {
+						"value": "@dataset().tablename",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": [
@@ -270,42 +301,6 @@
 				}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureKeyVault1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/MongoDb1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "MongoDbV2",
-				"typeProperties": {
-					"connectionString": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "AzureKeyVault1",
-							"type": "LinkedServiceReference"
-						},
-						"secretName": "[parameters('MongoDb1_properties_typeProperties_connectionString_secretName')]"
-					},
-					"database": "[parameters('MongoDb1_properties_typeProperties_database')]"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureKeyVault1')]"
-			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/OData1')]",
