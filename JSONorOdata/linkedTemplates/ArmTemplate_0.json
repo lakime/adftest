@@ -119,7 +119,7 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": {
-							"value": "@Destination",
+							"value": "Sroda",
 							"type": "Expression"
 						},
 						"container": "uploadjson"
@@ -230,12 +230,7 @@
 										"secureOutput": false,
 										"secureInput": false
 									},
-									"userProperties": [
-										{
-											"name": "Destination",
-											"value": "uploadjson//@{item.Name}"
-										}
-									],
+									"userProperties": [],
 									"typeProperties": {
 										"source": {
 											"type": "RestSource",
@@ -249,7 +244,16 @@
 										"sink": {
 											"type": "DelimitedTextSink",
 											"storeSettings": {
-												"type": "AzureBlobStorageWriteSettings"
+												"type": "AzureBlobStorageWriteSettings",
+												"metadata": [
+													{
+														"name": "Nejm",
+														"value": {
+															"value": "@item().Name",
+															"type": "Expression"
+														}
+													}
+												]
 											},
 											"formatSettings": {
 												"type": "DelimitedTextWriteSettings",
