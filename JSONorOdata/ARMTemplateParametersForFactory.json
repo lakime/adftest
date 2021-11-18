@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "JSONorOdata"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"RestService1_password": {
+			"value": ""
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://piotruwspc0646364860.vault.azure.net/"
+		},
+		"MongoDb1_properties_typeProperties_connectionString_secretName": {
+			"value": "MongoDB"
+		},
+		"MongoDb1_properties_typeProperties_database": {
+			"value": "platnosc"
+		},
+		"OData1_properties_typeProperties_url": {
+			"value": "https://services.odata.org/TripPinRESTierService/"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "http://www.uzar.pl:5001/starfull2"
+		},
+		"RestService1_properties_typeProperties_userName": {
+			"value": "laki"
+		}
+	}
+}
