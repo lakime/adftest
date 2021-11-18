@@ -31,12 +31,7 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
-							"userProperties": [
-								{
-									"name": "Destination",
-									"value": "uploadjson//@{item.Name}"
-								}
-							],
+							"userProperties": [],
 							"typeProperties": {
 								"source": {
 									"type": "RestSource",
@@ -50,7 +45,13 @@
 								"sink": {
 									"type": "DelimitedTextSink",
 									"storeSettings": {
-										"type": "AzureBlobStorageWriteSettings"
+										"type": "AzureBlobStorageWriteSettings",
+										"metadata": [
+											{
+												"name": "Nejm",
+												"value": "@item().Name"
+											}
+										]
 									},
 									"formatSettings": {
 										"type": "DelimitedTextWriteSettings",
