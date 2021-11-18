@@ -22,7 +22,6 @@
 				"typeProperties": {
 					"source": {
 						"type": "ODataSource",
-						"query": "$filter=FirstName eq 'Scott'",
 						"httpRequestTimeout": "00:05:00"
 					},
 					"sink": {
