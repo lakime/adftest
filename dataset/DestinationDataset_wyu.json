@@ -10,7 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "@item()",
+				"fileName": {
+					"value": "@item.value\n",
+					"type": "Expression"
+				},
 				"container": "uploadjson"
 			},
 			"columnDelimiter": ",",
