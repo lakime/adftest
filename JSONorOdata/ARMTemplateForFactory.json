@@ -79,7 +79,12 @@
 										"secureOutput": false,
 										"secureInput": false
 									},
-									"userProperties": [],
+									"userProperties": [
+										{
+											"name": "Destination",
+											"value": "uploadjson//@{item.Name}"
+										}
+									],
 									"typeProperties": {
 										"source": {
 											"type": "RestSource",
@@ -176,7 +181,7 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": {
-							"value": "@item.Name",
+							"value": "@Destination",
 							"type": "Expression"
 						},
 						"container": "uploadjson"
