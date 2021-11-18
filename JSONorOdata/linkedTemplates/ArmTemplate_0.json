@@ -118,7 +118,10 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@item",
+						"fileName": {
+							"value": "@item()",
+							"type": "Expression"
+						},
 						"container": "uploadjson"
 					},
 					"columnDelimiter": ",",
