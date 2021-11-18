@@ -70,7 +70,7 @@
 						"typeProperties": {
 							"source": {
 								"type": "ODataSource",
-								"query": "$filter=FirstName eq 'Scott'",
+								"query": "Airports('KSFO')/Name ",
 								"httpRequestTimeout": "00:05:00"
 							},
 							"sink": {
