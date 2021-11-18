@@ -176,7 +176,7 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": {
-							"value": "@item.Name()",
+							"value": "fadkfajdf",
 							"type": "Expression"
 						},
 						"container": "uploadjson"
