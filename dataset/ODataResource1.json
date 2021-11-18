@@ -5,11 +5,20 @@
 			"referenceName": "OData1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"tablename": {
+				"type": "string",
+				"defaultValue": "Airlines"
+			}
+		},
 		"annotations": [],
 		"type": "ODataResource",
 		"schema": [],
 		"typeProperties": {
-			"path": "Airports"
+			"path": {
+				"value": "@dataset().tablename",
+				"type": "Expression"
+			}
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
