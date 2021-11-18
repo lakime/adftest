@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "Sroda",
+					"value": "@item.name()",
 					"type": "Expression"
 				},
 				"container": "uploadjson"
