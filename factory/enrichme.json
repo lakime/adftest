@@ -1,0 +1,9 @@
+{
+	"name": "enrichme",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d1042720-98df-43e8-9437-a4504fa45d6d",
+		"tenantId": "3a6a50fc-3664-4d22-b89b-694891313170"
+	}
+}
