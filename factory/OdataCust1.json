@@ -1,0 +1,9 @@
+{
+	"name": "OdataCust1",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2d456f0b-ae3c-4401-be14-82a28494c645",
+		"tenantId": "3a6a50fc-3664-4d22-b89b-694891313170"
+	}
+}
