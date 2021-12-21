@@ -1,0 +1,9 @@
+{
+	"name": "dfactory-dev-odata",
+	"location": "ukwest",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "84711e73-72f7-40ab-b0de-ca308559e152",
+		"tenantId": "2864f69d-77c3-4fbe-bbc0-97502052391a"
+	}
+}
