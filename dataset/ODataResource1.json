@@ -12,7 +12,10 @@
 		},
 		"annotations": [],
 		"type": "ODataResource",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"path": "Airlines"
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
