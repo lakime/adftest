@@ -15,6 +15,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@activity('Web1').output",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "Copy data1",
