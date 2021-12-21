@@ -53,13 +53,19 @@
 							"inputs": [
 								{
 									"referenceName": "ODataResource1",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"tablename": "Airplanes"
+									}
 								}
 							],
 							"outputs": [
 								{
 									"referenceName": "DestinationDataset_wyu",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"filename": "abcd"
+									}
 								}
 							]
 						}
