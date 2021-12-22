@@ -1,0 +1,9 @@
+{
+	"name": "ODataResource1",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "823ca6af-b654-4af5-b032-aac64082f342",
+		"tenantId": "3a6a50fc-3664-4d22-b89b-694891313170"
+	}
+}
