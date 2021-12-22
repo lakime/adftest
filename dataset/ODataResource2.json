@@ -1,0 +1,12 @@
+{
+	"name": "ODataResource2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OData1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "ODataResource",
+		"schema": []
+	}
+}
